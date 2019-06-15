@@ -1,0 +1,31 @@
+[package]
+name = "netprobe"
+version = "0.4.2"
+edition = "2021"
+authors = ["waiel <git@waiel.co>"]
+description = "Fast network diagnostics toolkit written in Rust"
+license = "MIT"
+repository = "https://github.com/Waiel5/netprobe"
+keywords = ["network", "diagnostics", "ping", "scanner", "dns"]
+categories = ["command-line-utilities", "network-programming"]
+
+[dependencies]
+clap = { version = "3.2", features = ["derive"] }
+tokio = { version = "1.28", features = ["full"] }
+anyhow = "1.0"
+thiserror = "1.0"
+colored = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+trust-dns-resolver = "0.22"
+reqwest = { version = "0.11", features = ["json"] }
+socket2 = "0.5"
+rand = "0.8"
+chrono = "0.4"
+pnet = "0.33"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true

@@ -202,3 +202,4 @@ async fn send_ping(ip: IpAddr, seq: u16, timeout: Duration, _size: usize) -> Res
         }
     }
 }
+// --timeout and --count
